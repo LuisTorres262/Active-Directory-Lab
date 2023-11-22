@@ -25,7 +25,7 @@ This lab showcases the setup and usage of Active Directory in a Microsoft Azure 
 <img src="https://i.imgur.com/0ErUDHa.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Setup two virtual machines. One running Windows Server 2022 (DC-1) and the other running Windows 10 (Client-1). Set DC-1's NIC private IP address to be static. Use the same resource group and make sure that the Client-1 uses the same Vnet as DC-1.
+Set up two virtual machines. One is running Windows Server 2022 (DC-1) and the other running Windows 10 (Client-1). Set DC-1's NIC private IP address to be static. Use the same resource group and make sure that Client-1 uses the same Vnet as DC-1.
 </p>
 <br />
 
@@ -41,12 +41,12 @@ Login to DC-1 and install Active Directory Domain Services.
 <img src="https://i.imgur.com/0rVRRov.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Setup a new forest as mydomain.com. Restart and then log back into DC-1.
+Set up a new forest as mydomain.com. Restart and then log back into DC-1.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/18TH1ft.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/3jT8Kd2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 In Active Directory Users and Computers, create two Organizational Units named "_EMPLOYEES" and "_ADMINS". Create a new employee named “Jane Doe” and add them to the "Domain Admins" security group. Log out of DC-1 and log back in as "Jane Doe". 
@@ -65,7 +65,7 @@ From the Azure Portal, set Client-1’s DNS settings to the DC-1’s Private IP 
 <img src="https://i.imgur.com/18TH1ft.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-In Active Directory Users and Computers, create two Organizational Units named "_EMPLOYEES" and "_ADMINS". Create a new employee named “Jane Doe” and add them to the "Domain Admins" security group. Log out of DC-1 and log back in as "Jane Doe". Log into Client-1 as "Jane Doe and open system properties. Next click "Remote Desktop" and allow “domain users” access to remote desktop. You can now log into Client-1 as a non-administrative user. 
+In Active Directory Users and Computers, create two Organizational Units named "_EMPLOYEES" and "_ADMINS". Create a new employee named “Jane Doe” and add them to the "Domain Admins" security group. Log out of DC-1 and log back in as "Jane Doe". Log into Client-1 as "Jane Doe and open system properties. Next click "Remote Desktop" and allow “domain users” access to the remote desktop. You can now log into Client-1 as a non-administrative user. 
 </p>
 <br />
 
@@ -73,6 +73,6 @@ In Active Directory Users and Computers, create two Organizational Units named "
 <img src="https://i.imgur.com/JXBwafw.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Login to DC-1 as "Jane Doe" and open PowerShell_ise as an administrator. Paste the script from, (https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) and run it. Observe the accounts being created. Attempt to login into Client-1 with one of the newly created accounts.
+Login to DC-1 as "Jane Doe" and open PowerShell_ise as an administrator. Paste the script from, (https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) and run it. Observe the accounts being created. Attempt to log into Client-1 with one of the newly created accounts.
 </p>
 <br />
